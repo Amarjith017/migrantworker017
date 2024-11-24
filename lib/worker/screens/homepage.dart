@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:migrantworker/worker/screens/exchange_contractor.dart';
+import 'package:migrantworker/worker/screens/my_contractor.dart';
+import 'package:migrantworker/worker/screens/notification.dart';
 import 'package:migrantworker/worker/screens/profile.dart';
 import 'package:migrantworker/worker/screens/edit_profile.dart';
+import 'package:migrantworker/worker/screens/view_current_job.dart';
 
 class WorkerHome extends StatefulWidget {
   const WorkerHome({super.key});
@@ -256,19 +260,39 @@ class ProfileMenu extends StatelessWidget {
                     leading: const Icon(Icons.work),
                     title: const Text('My Contractor'),
                     trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return const MyContractor();
+                      },));
+                    },
                   ),
                   ListTile(
                     leading: const Icon(Icons.thumb_up),
-                    title: const Text('My Jobs'),
+                    title: const Text('Responses'),
                     trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
+                     onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return WorkerNotificationHub(
+                            toggle: true,
+                          );
+                        },
+                      ));
+                    },
                   ),
                   ListTile(
                     leading: const Icon(Icons.notifications),
                     title: const Text('Notification Hub'),
                     trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return WorkerNotificationHub(
+                            toggle: false,
+                          );
+                        },
+                      ));
+                    },
                   ),
                   ListTile(
                     leading: const Icon(Icons.edit),
@@ -286,7 +310,11 @@ class ProfileMenu extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const ViewCurrentJobPage();
+                },));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
@@ -295,7 +323,11 @@ class ProfileMenu extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const ContractorExchangePage();
+                },));
+              },
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: Colors.green),
                 padding: const EdgeInsets.symmetric(vertical: 15.0),

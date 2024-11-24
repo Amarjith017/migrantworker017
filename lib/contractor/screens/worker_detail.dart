@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:migrantworker/worker/screens/registration.dart';
+import 'package:migrantworker/contractor/screens/worker_registration.dart';
 
 class WorkerDetailsPage extends StatefulWidget {
   @override
@@ -140,8 +141,9 @@ class _WorkerDetailsPageState extends State<WorkerDetailsPage> {
               right: 20,
               child: FloatingActionButton(
                 onPressed: () {
-                  print("Already Existing Worker selected");
-                  // Add navigation logic for existing worker here
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const AddExistingWorker();
+                  },));
                 },
                 heroTag: 'existingWorker',
                 backgroundColor: Colors.green,

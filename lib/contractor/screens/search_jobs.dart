@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:migrantworker/contractor/screens/homepage.dart';
+//import 'package:migrantworker/contractor/screens/homepage.dart';
 
 
 class SearchJobPage extends StatefulWidget {
@@ -23,10 +23,7 @@ class _SearchJobPageState extends State<SearchJobPage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white), // Left arrow icon
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => ContractorHome()), // Navigate to ContractorHome page
-            );
+            Navigator.pop(context);
           },
         ),
         title: Text(
